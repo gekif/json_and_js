@@ -24,9 +24,11 @@
 
     for (key in data.courses) {
         output += '<li>' + '<a href="' + data.courses[key] + '">' + key + '</a></li>'
-
-        console.log(output);
     }
+
+    var update = document.getElementById('social');
+
+    update.innerHTML = output.toUpperCase(update);
 </script>
 </body>
 </html>
