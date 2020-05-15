@@ -5,19 +5,28 @@
     <title>Document</title>
 </head>
 <body>
-<div id="social">
-    <script>
-        var data = {
-            name: 'Dzulfikar Maulana',
-            title: 'Scrum Master',
-            courses: {
-                php: 'http://www.php.com',
-                javascript: 'http://www.javascript.com',
-                twitter: 'http://www.twitter.com',
-                facebook: 'http://www.facebook.com'
-            }
-        };
-    </script>
-</div>
+<ul id="social"></ul>
+
+<script>
+    var data = {
+        name: 'Dzulfikar Maulana',
+        title: 'Scrum Master',
+        courses: {
+            php: 'http://www.php.com',
+            javascript: 'http://www.javascript.com',
+            youtube: 'http://www.youtube.com',
+            twitter: 'http://www.twitter.com',
+            facebook: 'http://www.facebook.com'
+        }
+    };
+
+    var output = '';
+
+    for (key in data.courses) {
+        output += '<li>' + '<a href="' + data.courses[key] + '">' + key + '</a></li>'
+
+        console.log(output);
+    }
+</script>
 </body>
 </html>
