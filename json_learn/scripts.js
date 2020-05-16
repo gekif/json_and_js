@@ -11,6 +11,7 @@ r.open('GET', 'data.json');
 
 r.onreadystatechange = function () {
     if (r.status === 200 && r.readyState === 4) {
+        var data = JSON.parse(r.responseText);
         var output = '';
 
         for (var i = 0; i <= data.courses.length; i++) {
@@ -20,10 +21,12 @@ r.onreadystatechange = function () {
                 }
             }
         }
+
+        var update = document.getElementById('social');
+
+        update.innerHTML = output.toUpperCase(update);
     }
 }; // ready state event handler
 
-var update = document.getElementById('social');
-
-update.innerHTML = output.toUpperCase(update);
+r.send();
 
